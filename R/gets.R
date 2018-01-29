@@ -62,7 +62,7 @@ search_im <- function(min_lat, max_lat, min_lon, max_lon,
 	if(missing(page)) page <- NULL
 	
 	# make request
-  res <- m_get_url(path="search/im", min_lat=min_lat, max_lat=max_lat, min_lon=min_lon, max_lon=max_lon, 
+  res <- m_get_url(path="images", min_lat=min_lat, max_lat=max_lat, min_lon=min_lon, max_lon=max_lon, 
     start_time=start_time, end_time=end_time, user=user, limit=limit, page=page)
   raw <- m_parse(res)
   df <- to_df(raw, "search_im")
@@ -139,8 +139,8 @@ search_im_close <- function(lat, lon, distance,
 	if(missing(limit)) limit <- NULL
 	if(missing(page)) page <- NULL
 	
-	# make request
-  res <- m_get_url(path="search/im/close", lat=lat, lon=lon, distance=distance, 
+	# make request longitude,latitude
+  res <- m_get_url(path="images", closeto=paste0(lat,",",lon), distance=distance, 
     start_time=start_time, end_time=end_time, min_ca=min_ca, max_ca=max_ca, 
 		user=user, limit=limit, page=page)
   raw <- m_parse(res)
