@@ -1,6 +1,6 @@
 # make request
 m_get_url <- function(path, ...) {
-	res <- GET("https://a.mapillary.com", path=paste0("v2/", path), query=list(client_id="QmpJMFpwR09HVG9NdV9lZHo2ZlFGQTpiZDUzNzRiYTc5NWRiYzc3", ...))
+	res <- GET("https://a.mapillary.com", path=paste0("v3/", path), query=list(client_id="QmVDcWh5cE52ZTNVVEk4eVZXVkJpUTpkODY1NTQ5MDEyMGMwNGE5", ...))
 	message("Request: ", res$url) # for debugging
 	m_check(res)
 	return(res)
