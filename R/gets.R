@@ -140,7 +140,7 @@ search_im_close <- function(lat, lon, distance,
 	if(missing(page)) page <- NULL
 	
 	# make request longitude,latitude
-  res <- m_get_url(path="images", closeto=paste0(lat,",",lon), distance=distance, 
+  res <- m_get_url(path="images",lat=lat,lon=lon, distance=distance, 
     start_time=start_time, end_time=end_time, min_ca=min_ca, max_ca=max_ca, 
 		user=user, limit=limit, page=page)
   raw <- m_parse(res)
